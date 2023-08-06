@@ -1,0 +1,6 @@
+id,anom_port_sort,holding_period,num_pc,monthly_pc,market_adj_ret,scaled_var,total_r2,num_sign_pc
+50111,False,1.0,5.0,True,True,True,2.18,4.0
+51111,True,1.0,5.0,True,True,True,2.24,5.0
+70111,False,1.0,7.0,True,True,True,2.01,6.0
+50001,False,1.0,5.0,True,False,False,2.42,4.0
+50116,False,6.0,5.0,False,True,True,8.97,3.0

@@ -1,0 +1,16 @@
+\begin{table}
+\caption{Predicting dominant equity components with BE/ME ratios}
+ \caption*{We report results from predictive regressions of excess market returns and five PCs of long-short anomaly returns. The market is forecasted using the log of the aggregate book-to-market ratio. The anomaly PCs are forecasted using a restricted linear combination of anomalies log book-to-market ratios with weights given by the corresponding eigenvector of pooled long-short strategy returns. The first row shows the coefficient estimate. The second row shows asymptotic t-statistics estimated using the method of Newey and West (1987). The third and fourth rows show the bias and p-value from a parametric bootstrap. The fifth and sixth rows shows the in-sample and out-of-sample monthly R2. The last three rows give critical values of the OOS R2 based on the placebo test in Kelly and Pruitt (2013).}
+\begin{tabularx}{\linewidth}{l *6{>{\centering\arraybackslash}X}}
+\toprule
+ & MKT & PC1 & PC2 & PC3 & PC4 & PC5 \\
+\midrule
+Own $bm$ (IS) & 0.71 & 3.78 & 3.04 & 1.96 & 4.81 & 1.43 \\
+t-stat. (IS) & 1.09 & 4.13 & 3.13 & 1.72 & 4.52 & 1.41 \\
+Own $bm$ (OOS) & 1.30 & 2.78 & 2.56 & 2.70 & 5.56 & 2.88 \\
+t-stat. (OOS) & 1.09 & 2.05 & 1.47 & 1.95 & 2.82 & 2.48 \\
+$R^2$ & 0.26 & 3.15 & 1.83 & 0.56 & 3.74 & 0.38 \\
+OOS $R^2$ & 0.96 & 4.10 & 2.59 & 0.18 & 4.08 & -0.07 \\
+\bottomrule
+\end{tabularx}
+\end{table}

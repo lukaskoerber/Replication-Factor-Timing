@@ -1,0 +1,14 @@
+\begin{table}
+\caption{Out-of-sample R2 of various forecasting methods}
+\begin{tabular}{lrrrr}
+\toprule
+ & OOS total $R^2$ & Mean & Median & Std. \\
+\midrule
+50 Anom, BM of Anom, OLS & -123.87 & -224.40 & -197.79 & 153.47 \\
+5 PCs, Own BM & 2.18 & 1.29 & 1.65 & 2.67 \\
+5 PCs, BM of PCs, Ridge 1DoF & 0.56 & -0.04 & -0.36 & 0.74 \\
+5 PCs, BM of PCs, Lasso-OLS 1DoF & 0.59 & -0.23 & -0.28 & 1.15 \\
+50 Anom, Own BM & 0.52 & -0.70 & -0.03 & 2.58 \\
+\bottomrule
+\end{tabular}
+\end{table}
