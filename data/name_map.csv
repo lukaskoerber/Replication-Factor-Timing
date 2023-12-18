@@ -1,0 +1,51 @@
+index,name,short_name
+1,Size,size
+2,Value (A),value
+3,Gross Profitability,prof
+4,Value-Profitablity,valprof
+5,F-score,fscore
+6,Debt Issuance,debtiss
+7,Share Repurchases,repurch
+8,Net Issuance (A),nissa
+9,Accruals,accruals
+10,Asset Growth,growth
+11,Asset Turnover,aturnover
+12,Gross Margins,gmargins
+13,Earnings/Price,ep
+14,Cash Flows/Price,cfp
+15,Net Operating Assets,noa
+16,Investment/Assets,inv
+17,Investment/Capital,invcap
+18,investment Growth,igrowth
+19,Sales Growth,sgrowth
+20,Leverage,lev
+21,Return on Assets (A),roaa
+22,Return on Book Equity (A),roea
+23,Sales/Price,sp
+24,Growth in LTNOA,gltnoa
+25,Momentum (6m),mom
+26,Value-Momentum,valmom
+27,Value-Momentum-Prof.,valmomprof
+28,Short Interest,shortint
+29,Momentum (12m),mom12
+30,Industry Momentum,indmom
+31,Momentum-Reversals,momrev
+32,Long Run Reversals,lrrev
+33,Value (M),valuem
+34,Net Issuance (M),nissm
+35,Earnings Surprises,sue
+36,Return on Book Equity (Q),roe
+37,Return on Market Equity,rome
+38,Return on Assets (Q),roa
+39,Short-Term Reversals,strev
+40,Idiosyncratic Volatility,ivol
+41,Beta Arbitrage,betaarb
+42,Seasonality,season
+43,Industry Rel. Reversals,indrrev
+44,Industry Rel. Rev. (L. V.),indrrevlv
+45,Ind. Mom-Reversals,indmomrev
+46,Composite Issuance,ciss
+47,Price,price
+48,Share Volume,shvol
+49,Duration,dur
+50,Firm age,age

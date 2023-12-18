@@ -88,6 +88,7 @@ def plot_real_and_predicted_returns(df:pd.DataFrame, columns:list, title:str, fi
     fig.update_yaxes(range=[df_min, df_max])
     pio.full_figure_for_development(fig, warn=False)
     fig.write_image("./result_export/"+filename+".pdf",engine="kaleido")
+    fig.write_image("./result_export/"+filename+".png",engine="kaleido")
 
 # load data from the directory and exclude some factors
 list_of_files = os.listdir(data_path)
@@ -103,7 +104,7 @@ for t in list_of_files:
     if txt not in factors and txt in name_map.index:
         factors.append(txt)
 
-# load data
+# %% load data
 all_ret = []
 all_ret_daily = []
 all_bm = []
@@ -176,6 +177,8 @@ inf_rate = pd.read_csv('data/inflation.csv', index_col='date', parse_dates=True)
 inf_rate.loc[inf_rate['inflation']=='.',:] = np.nan
 inf_rate = inf_rate.astype(float)
 inf_rate = inf_rate.loc[start_date:end_date]
+
+# %%
 
 # create value weights per anomaly
 all_me_sum = []
@@ -281,6 +284,8 @@ if holding_period == 6:
     market_bm.name = 'market_bm'
     market_bm.index = pd.to_datetime(market_bm.index)
 
+# %% demarket anomaly returns
+
 def total_r2(returns_pred:pd.DataFrame, returns_true:pd.DataFrame):
     """
     calculate the total r2 of the predicted returns
@@ -345,6 +350,8 @@ if scale_for_market_var:
 else:
     fullsample_bm = fullsample_bm.divide(insample_bm_std)
 
+#%% pca
+
 # run pca on insample returns
 pca = PCA()
 pca.fit(fullsample_ret.loc[:mid_date])
@@ -376,6 +383,8 @@ if export_results:
                             'Percentage of variance explained by each PC of the 50 anomaly strategies.', 
                             1)
 
+# %% run predictive regressions
+    
 # run predictive regressions
 pc_ret = fullsample_ret.dot(pca_comp)
 pc_bm = fullsample_bm.dot(pca_comp)
@@ -472,6 +481,7 @@ if export_results:
     )
     pio.full_figure_for_development(fig, warn=False)
     fig.write_image("./result_export/r2_pca_in_oos.pdf",engine="kaleido")
+    fig.write_image("./result_export/r2_pca_in_oos.png",engine="kaleido")
 
     # collect regression results and save to tex file
     reg_table = pca_res.loc[:'PC5',['beta_in','t_test_in','beta_oos','t_test_oos','r2_in','r2_oos']]
@@ -548,6 +558,7 @@ if export_results:
                     yaxis=dict(title='R-squared (%)', range=[-5,5]))
     pio.full_figure_for_development(fig, warn=False)
     fig.write_image("./result_export/factor_predictability.pdf",engine="kaleido")
+    fig.write_image("./result_export/factor_predictability.png",engine="kaleido")
 
     # calculate summary statistics of factor predictability
     factor_pred_table_desc = factor_predictability_table.describe().loc[['mean','50%','std','min','max'],:]
@@ -587,7 +598,9 @@ if export_results:
     fig.update_traces(line=dict(color=plotly_colors[0], width=2))
     pio.full_figure_for_development(fig, warn=False)
     fig.write_image("./result_export/anomaly_exp_rets.pdf",engine="kaleido")
+    fig.write_image("./result_export/anomaly_exp_rets.png",engine="kaleido")
 
+# %%
 
 if not quintiles and holding_period==1:
     # build portfolios for static factor investing
@@ -823,6 +836,7 @@ if not quintiles and holding_period==1:
                             margin=dict(l=10, r=10))
         pio.full_figure_for_development(fig, warn=False)
         fig.write_image("./result_export/sdf_variance.pdf",engine="kaleido")
+        fig.write_image("./result_export/sdf_variance.png",engine="kaleido")
 
         # plot variation offactor timing with inflation
         fig = go.Figure()
@@ -867,6 +881,7 @@ if not quintiles and holding_period==1:
         fig.update_yaxes(range=[0.2, 1.0])
         pio.full_figure_for_development(fig, warn=False)
         fig.write_image("./result_export/strategie_correlation.pdf",engine="kaleido")
+        fig.write_image("./result_export/strategie_correlation.png",engine="kaleido")
 
     # different methods for predicting anomaly returns
     # regression of all factor valuation ratios on all factor returns
