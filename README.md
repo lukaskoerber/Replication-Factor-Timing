@@ -1,6 +1,6 @@
 # Replication: Factor Timing
 
-This repository replicates the findings from the paper titled *Factor timing* by **Valentin Haddad, Serhiy Kozak, and Shrihari Santosh**, published in The Review of Financial Studies in 2020. The paper delves into the significance of factor timing, its optimal portfolio equivalence to the stochastic discount factor, and its predictability in market-neutral equity factors.
+This repository replicates the findings from the paper  *Factor timing* by **Valentin Haddad, Serhiy Kozak, and Shrihari Santosh**, published in The Review of Financial Studies in 2020. The paper delves into the predictability of market-neutral equity factors and examines the impact of factor timing on estimating the stochastic discount factor and the optimal factor timing portfolio."
 
 [Link to the original paper on SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2945667).
 
